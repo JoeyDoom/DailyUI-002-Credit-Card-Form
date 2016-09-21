@@ -14,6 +14,9 @@
 		D44EF1EC1D921BFA00F42870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1EB1D921BFA00F42870 /* Constants.swift */; };
 		D44EF1EE1D921D8700F42870 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1ED1D921D8700F42870 /* HomeViewController.swift */; };
 		D44EF1F21D92277300F42870 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1F11D92277300F42870 /* CardView.swift */; };
+		D44EF1F51D9245CE00F42870 /* FieldAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1F41D9245CE00F42870 /* FieldAreaView.swift */; };
+		D44EF1F91D924F0A00F42870 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1F81D924F0A00F42870 /* TextField.swift */; };
+		D44EF1FB1D92547100F42870 /* Futura Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44EF1FA1D92547100F42870 /* Futura Bold BT.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D44EF1EB1D921BFA00F42870 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D44EF1ED1D921D8700F42870 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D44EF1F11D92277300F42870 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D44EF1F41D9245CE00F42870 /* FieldAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldAreaView.swift; sourceTree = "<group>"; };
+		D44EF1F81D924F0A00F42870 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		D44EF1FA1D92547100F42870 /* Futura Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold BT.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 				D44EF1DE1D921B6000F42870 /* Assets.xcassets */,
 				D44EF1E01D921B6000F42870 /* LaunchScreen.storyboard */,
 				D44EF1E31D921B6000F42870 /* Info.plist */,
+				D44EF1FA1D92547100F42870 /* Futura Bold BT.ttf */,
 			);
 			path = "Credit Card Checkout";
 			sourceTree = "<group>";
@@ -90,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				D44EF1F11D92277300F42870 /* CardView.swift */,
+				D44EF1F41D9245CE00F42870 /* FieldAreaView.swift */,
+				D44EF1F81D924F0A00F42870 /* TextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -155,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44EF1E21D921B6000F42870 /* LaunchScreen.storyboard in Resources */,
+				D44EF1FB1D92547100F42870 /* Futura Bold BT.ttf in Resources */,
 				D44EF1DF1D921B6000F42870 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +178,8 @@
 			files = (
 				D44EF1DA1D921B6000F42870 /* ViewController.swift in Sources */,
 				D44EF1D81D921B6000F42870 /* AppDelegate.swift in Sources */,
+				D44EF1F51D9245CE00F42870 /* FieldAreaView.swift in Sources */,
+				D44EF1F91D924F0A00F42870 /* TextField.swift in Sources */,
 				D44EF1EC1D921BFA00F42870 /* Constants.swift in Sources */,
 				D44EF1F21D92277300F42870 /* CardView.swift in Sources */,
 				D44EF1EE1D921D8700F42870 /* HomeViewController.swift in Sources */,

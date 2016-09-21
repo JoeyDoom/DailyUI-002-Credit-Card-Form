@@ -17,3 +17,5 @@ let colorWhite          = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
 // fonts
 let fontLight           = UIFont(name: "HelveticaNeue-Light", size: 14)
 let fontMedium          = UIFont(name: "Futura-Medium", size: 14)
+let fontBold            = UIFont(name: "Futura-Bold", size: 17)
+let fontBoldSmall       = UIFont(name: "Futura-Bold", size: 10)
