@@ -17,6 +17,8 @@
 		D44EF1F51D9245CE00F42870 /* FieldAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1F41D9245CE00F42870 /* FieldAreaView.swift */; };
 		D44EF1F91D924F0A00F42870 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1F81D924F0A00F42870 /* TextField.swift */; };
 		D44EF1FB1D92547100F42870 /* Futura Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44EF1FA1D92547100F42870 /* Futura Bold BT.ttf */; };
+		D44EF1FE1D9378DA00F42870 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1FD1D9378DA00F42870 /* CircularTransition.swift */; };
+		D44EF2001D93792900F42870 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EF1FF1D93792900F42870 /* SuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D44EF1F41D9245CE00F42870 /* FieldAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldAreaView.swift; sourceTree = "<group>"; };
 		D44EF1F81D924F0A00F42870 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		D44EF1FA1D92547100F42870 /* Futura Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold BT.ttf"; sourceTree = "<group>"; };
+		D44EF1FD1D9378DA00F42870 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		D44EF1FF1D93792900F42870 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		D44EF1D61D921B6000F42870 /* Credit Card Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				D44EF1FC1D9378BE00F42870 /* Transitions */,
 				D44EF1F31D9228BC00F42870 /* Views */,
 				D44EF1EA1D921BD800F42870 /* Controllers */,
 				D44EF1E91D921BD300F42870 /* Helpers */,
@@ -89,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D44EF1ED1D921D8700F42870 /* HomeViewController.swift */,
+				D44EF1FF1D93792900F42870 /* SuccessViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -101,6 +107,14 @@
 				D44EF1F81D924F0A00F42870 /* TextField.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		D44EF1FC1D9378BE00F42870 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				D44EF1FD1D9378DA00F42870 /* CircularTransition.swift */,
+			);
+			name = Transitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,8 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44EF1DA1D921B6000F42870 /* ViewController.swift in Sources */,
+				D44EF2001D93792900F42870 /* SuccessViewController.swift in Sources */,
 				D44EF1D81D921B6000F42870 /* AppDelegate.swift in Sources */,
 				D44EF1F51D9245CE00F42870 /* FieldAreaView.swift in Sources */,
+				D44EF1FE1D9378DA00F42870 /* CircularTransition.swift in Sources */,
 				D44EF1F91D924F0A00F42870 /* TextField.swift in Sources */,
 				D44EF1EC1D921BFA00F42870 /* Constants.swift in Sources */,
 				D44EF1F21D92277300F42870 /* CardView.swift in Sources */,
@@ -336,6 +352,7 @@
 				D44EF1E81D921B6000F42870 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

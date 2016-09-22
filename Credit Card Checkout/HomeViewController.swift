@@ -50,8 +50,31 @@ class HomeViewController: UIViewController {
         return iv
     }()
     
-    let cardView: CardView = {
+    let successMessage: UILabel = {
+        let label = UILabel()
+        label.text = "ORDER COMPLETE"
+        label.font = fontBold
+        label.textColor = colorWhite
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        return label
+    }()
+    
+    lazy var returnMessage: UIButton = {
+        let label = UIButton()
+        label.setTitle("continue shopping", for: .normal)
+        label.setTitleColor(colorWhite, for: .normal)
+        label.titleLabel?.font = fontMedium
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        label.addTarget(self, action: #selector(handleReturn), for: .touchUpInside)
+        return label
+    }()
+    
+    lazy var cardView: CardView = {
         let cv = CardView()
+        cv.parentController = self
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -76,6 +99,18 @@ class HomeViewController: UIViewController {
         closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
         closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         
+        // bring in success views
+        view.addSubview(successMessage)
+        successMessage.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 104).isActive = true
+        successMessage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        successMessage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        
+        // bring in success views
+        view.addSubview(returnMessage)
+        returnMessage.topAnchor.constraint(equalTo: successMessage.bottomAnchor, constant: 16).isActive = true
+        returnMessage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        returnMessage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+    
         // bring in the card view
         view.addSubview(cardView)
         cardView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 24).isActive = true
@@ -83,15 +118,12 @@ class HomeViewController: UIViewController {
         cardView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         cardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24).isActive = true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func handleReturn() {
+        cardView.successButton.alpha = 0
+        cardView.subviews.forEach({ $0.removeFromSuperview() })
+        view.subviews.forEach({ $0.removeFromSuperview() })
+        setupViews()
     }
-    */
 
 }

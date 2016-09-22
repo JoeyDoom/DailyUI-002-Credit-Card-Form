@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
 class CardView: UIView {
     
+    var parentController: HomeViewController?
+    
+    var heightSpot: NSLayoutConstraint?
     
     let topBar: UIImageView = {
         let iv = UIImageView()
@@ -39,6 +41,15 @@ class CardView: UIView {
         button.titleLabel?.font = fontBold
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        return button
+    }()
+    
+    let successButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .green
+        button.alpha = 0
+        button.isUserInteractionEnabled = false
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -148,6 +159,7 @@ class CardView: UIView {
         payButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
         payButton.widthAnchor.constraint(equalTo: self.widthAnchor, constant: 0).isActive = true
         payButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
+        payButton.addTarget(self, action: #selector(payAction), for: .touchUpInside)
         
         self.addSubview(pageControl)
         pageControl.widthAnchor.constraint(equalTo: self.widthAnchor, constant: 0).isActive = true
@@ -171,6 +183,13 @@ class CardView: UIView {
         separatorBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
         
         buildForm()
+        
+        self.addSubview(successButton)
+        successButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        successButton.widthAnchor.constraint(equalTo: self.widthAnchor, constant: 0).isActive = true
+        successButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
+        heightSpot = successButton.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -48)
+        heightSpot?.isActive = true
         
     }
     
@@ -201,13 +220,22 @@ class CardView: UIView {
         zipField.widthAnchor.constraint(equalToConstant: (self.frame.width - 64) / 3).isActive = true
         zipField.topAnchor.constraint(equalTo: cardField.bottomAnchor, constant: 16).isActive = true
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    func payAction() {
+        UIView.animate(withDuration: 0.2) { 
+            self.successButton.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseInOut, animations: {
+            self.heightSpot?.constant -= self.frame.height + 48
+            self.layoutIfNeeded()
+        }) { (completedAnimation) in
+//            self.parentController?.dismissCard()
+        }
+        UIView.animate(withDuration: 0.2, delay: 1.8, options: .curveEaseIn, animations: {
+            self.frame.origin.y = (self.parentController?.view.frame.maxY)!
+            self.layoutIfNeeded()
+            }, completion: nil)
     }
-    */
 
 }

@@ -35,6 +35,7 @@ class FieldAreaView: UIView {
         label.text = self.title
         label.font = fontBoldSmall
         label.textColor = colorSecondary
+        label.frame = label.frame.integral
         label.translatesAutoresizingMaskIntoConstraints = false
         label.heightAnchor.constraint(equalToConstant: 16).isActive = true
         return label
