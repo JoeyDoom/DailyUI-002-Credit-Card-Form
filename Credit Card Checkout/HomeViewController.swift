@@ -121,6 +121,7 @@ class HomeViewController: UIViewController {
     
     func handleReturn() {
         cardView.successButton.alpha = 0
+        cardView.activity.stopAnimating()
         cardView.subviews.forEach({ $0.removeFromSuperview() })
         view.subviews.forEach({ $0.removeFromSuperview() })
         setupViews()

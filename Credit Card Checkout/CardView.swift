@@ -10,7 +10,6 @@ import UIKit
 class CardView: UIView {
     
     var parentController: HomeViewController?
-    
     var heightSpot: NSLayoutConstraint?
     
     let topBar: UIImageView = {
@@ -46,7 +45,7 @@ class CardView: UIView {
     
     let successButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .green
+        button.backgroundColor = colorSuccess
         button.alpha = 0
         button.isUserInteractionEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -137,6 +136,11 @@ class CardView: UIView {
         return tf
     }()
 
+    lazy var activity: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        return activity
+    }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -191,6 +195,10 @@ class CardView: UIView {
         heightSpot = successButton.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -48)
         heightSpot?.isActive = true
         
+        self.addSubview(activity)
+        activity.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        activity.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
     }
     
     
@@ -226,13 +234,14 @@ class CardView: UIView {
             self.successButton.alpha = 1
         }
         
-        UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseInOut, animations: {
             self.heightSpot?.constant -= self.frame.height + 48
             self.layoutIfNeeded()
+            self.activity.startAnimating()
         }) { (completedAnimation) in
-//            self.parentController?.dismissCard()
+            // nothing here
         }
-        UIView.animate(withDuration: 0.2, delay: 1.8, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.2, delay: 1.5, options: .curveEaseIn, animations: {
             self.frame.origin.y = (self.parentController?.view.frame.maxY)!
             self.layoutIfNeeded()
             }, completion: nil)
