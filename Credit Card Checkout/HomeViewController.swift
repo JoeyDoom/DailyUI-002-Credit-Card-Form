@@ -72,6 +72,15 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    let checkMark: UIImageView = {
+        let image = UIImageView()
+        image.image = #imageLiteral(resourceName: "checked-mark")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.widthAnchor.constraint(equalToConstant: 96).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 96).isActive = true
+        return image
+    }()
+    
     lazy var cardView: CardView = {
         let cv = CardView()
         cv.parentController = self
@@ -99,15 +108,20 @@ class HomeViewController: UIViewController {
         closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 24).isActive = true
         closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         
+        // bring in check mark
+        view.addSubview(checkMark)
+        checkMark.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 104).isActive = true
+        checkMark.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         // bring in success views
         view.addSubview(successMessage)
-        successMessage.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 104).isActive = true
+        successMessage.topAnchor.constraint(equalTo: checkMark.bottomAnchor, constant: 16).isActive = true
         successMessage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         successMessage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
         
         // bring in success views
         view.addSubview(returnMessage)
-        returnMessage.topAnchor.constraint(equalTo: successMessage.bottomAnchor, constant: 16).isActive = true
+        returnMessage.topAnchor.constraint(equalTo: successMessage.bottomAnchor, constant: 80).isActive = true
         returnMessage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         returnMessage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
     
